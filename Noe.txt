@@ -1,0 +1,51 @@
+–––––––––– 19 April 2024 ––––––––––
+
+–––––––––– React ––––––––––
+Install React
+
+https://youtu.be/Rh3tobg7hEo?si=NNeZkI4EHa8RUhXd&t=422
+npm create vite@latest
+npm install && npm run dev
+
+npm install react-router-dom axios redux-thunk redux  react-redux @redux-devtools/extension redux-thunk --save
+
+
+npm create vite@latest my-react-app --template react
+Vite is a build tool that optimizes the development experience.
+
+npm install --save @redux-devtools/extension
+npm install --save-dev '@redux-devtools/extension';
+
+npm install @testing-library/react
+
+
+
+–––––––––– Unit Test ––––––––––
+https://vitest.dev/guide/
+
+npm install -D vitest
+npm install --save-dev jsdom
+npm test
+
+what is assertion in unit test
+–––––––––––––––––––––––––––––––
+In essence, assertions are used to declare the expected behavior or outcome of a test.
+
+
+
+I got a hack from my a friend. Who belongs to batch 1/2. He will take a session and give it to you by swaping in a odd time (Pre-arrange) like midnight 02:00
+
+–––––––––– Material UI ––––––––––
+https://mui.com/material-ui/getting-started/installation/
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto
+npm install @mui/icons-material
+npm install @material-ui/styles
+
+
+–––––––––– React Build ––––––––––
+python3 -m http.server 80
+
+
+
+–––––––––– Fonts ––––––––––
