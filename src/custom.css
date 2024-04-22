@@ -1,0 +1,27 @@
+@font-face {
+    font-family: Domine;
+    src: url("assets/Domine/Domine-Regular.ttf")  format('truetype');
+}
+
+@font-face {
+  font-family: Jersey_25;
+  src: url("assets/Jersey_25/Jersey25-Regular.ttf") format('truetype');
+}
+
+.nav_menu {
+  width: 100%;
+  margin-bottom: 3rem;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  background: #fff;
+  margin: 10px 0;
+}
+.nav_menu li a {
+  margin-right: 10px;
+  color: #333 !important;
+}
+
+.footer_section {
+  margin-top: 3rem;
+}
