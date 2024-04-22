@@ -21,7 +21,7 @@ import AppBar from '@mui/material/AppBar';
 const themeOptions = {
 
   typography: {
-    fontFamily: ['Domine', 'serif'].join(','),
+    fontFamily: ['Josefin_Sans', sans-serif, 'Domine', 'serif'].join(','),
     button: {
       fontSize: 16,
       fontWeight: 400,

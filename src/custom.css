@@ -1,13 +1,24 @@
 @font-face {
     font-family: Domine;
-    src: url("assets/Domine/Domine-Regular.ttf")  format('truetype');
+    src: url("assets/webfonts/Domine-Regular.ttf")  format('truetype');
 }
 
 @font-face {
   font-family: Jersey_25;
-  src: url("assets/Jersey_25/Jersey25-Regular.ttf") format('truetype');
+  src: url("assets/webfonts/Jersey25-Regular.ttf") format('truetype');
 }
-
+@font-face {
+  font-family: 'Josefin_Sans';
+  src: url('assets/webfonts/JosefinSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Josefin_Sans_Bold';
+  src: url('assets/webfonts/JosefinSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 .nav_menu {
   width: 100%;
   margin-bottom: 3rem;
