@@ -3,13 +3,15 @@ import { composeWithDevTools } from '@redux-devtools/extension';
 
 import { thunk } from 'redux-thunk';
 import productsReducer from './reducers/productsReducer';
+import cartReducer from './reducers/cartReducer';
 
 
 // Redux-devtools extension library
 // import { composeWithDevTools } from '@redux-devtools/extension';
 
 export const reducers = combineReducers({
-	products: productsReducer
+	products: productsReducer,
+	cart: cartReducer
 });
 
 export default legacy_createStore(

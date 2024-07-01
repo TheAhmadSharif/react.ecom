@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import About from './About.jsx'
-import Product from './Product.jsx'
+import Cart from './components/Cart.jsx'
+import Product from './components/ProductMui.jsx'
 import './index.css'
 import './custom.css';
 
@@ -22,8 +23,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<App />}>
-					<Route index />
-					<Route path="product" element={<Product />} />
+					
+						<Route index element={<Product />} />
+						<Route path="product" element={<Product />} />
+						<Route path="cart" element={<Cart />} />
 					<Route path="*" element={<>404</>} />
 				</Route>
 			</Routes>

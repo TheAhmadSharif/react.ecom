@@ -1,10 +1,10 @@
 
-import './App.css'
+import '../App.css'
 
 import { Outlet, Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { getProducts } from './redux/actionCreators/productsActions.js';
+import { getProducts } from '../redux/actionCreators/productsActions.js';
 import axios from "axios";
 
 
@@ -37,6 +37,35 @@ function Product() {
 			});
 	}, [])
 
+  const addToCart = (event, obj, qty=1) => {
+    console.log(obj)
+		event.preventDefault();
+		const _obj = {
+			"product": {
+				...obj,
+			},
+			"quantity": qty
+		}
+		// dispatch(addCartItem(_obj));
+		localStorage.setItem('cart', JSON.stringify(__state.cart));
+	}
+
+	const incrementItem  = (id) => {
+		const payload = {
+			productId: id,
+			amount: 1
+		}
+
+		dispatch(incrementCartItem(payload));
+	}
+	const decrementItem  = (id) => {
+		const payload = {
+			productId: id,
+			amount: -1
+		}
+		dispatch(decrementCartItem(payload));
+	}
+
 
   return (
     <>
@@ -65,10 +94,17 @@ function Product() {
                 </CardActionArea>
                 <CardActions>
                   <Button size="small" variant="outlined" color="primary"
-                  style={{textTransform: 'none', border: '2px solid' }}
+                  style={{textTransform: 'none', border: '2px solid' }} onClick={(event)=> addToCart(event, obj)}
               
                   >
                     Add To Cart
+                  </Button>
+
+                  <Button size="small" variant="outlined" color="primary"
+                  style={{textTransform: 'none', border: '2px solid' }} onClick={(event)=> incrementItem(event, obj)}
+              
+                  >
+                    +
                   </Button>
                 </CardActions>
             </Card>

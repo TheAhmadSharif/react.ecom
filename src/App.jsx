@@ -21,7 +21,7 @@ import AppBar from '@mui/material/AppBar';
 const themeOptions = {
 
   typography: {
-    fontFamily: ['Josefin_Sans', sans-serif, 'Domine', 'serif'].join(','),
+    fontFamily: ['Josefin_Sans', 'sans-serif', 'Domine', 'serif'].join(','),
     button: {
       fontSize: 16,
       fontWeight: 400,
@@ -46,8 +46,6 @@ const theme = createTheme(themeOptions);
 function App() {
   const [count, setCount] = useState(0);
 
-
-
   return (
     <>
 
@@ -56,24 +54,23 @@ function App() {
       <CssBaseline />
       <Container maxWidth="md" container="true">
 
+             <div style={{ minHeight: '80vh'  }}>
               <div className="nav_menu">
-                  <ul className="list d-flex" id="mainMenu">
-                    <li><Link  to={`/`}>Home </Link></li>
-                    <li><Link  to={`product`}>Product </Link></li>
-                  </ul>
-
-              </div>
-            <Outlet />
+                    <ul className="list d-flex" id="mainMenu">
+                      <li><Link  to={`/`}>Home </Link></li>
+                      <li><Link  to={`product`}>Product </Link></li>
+                      <li><Link  to={`cart`}>Cart </Link></li>
+                    </ul>
+                </div>
+              <Outlet />
+             </div>
 
             <footer className="footer_section">
-            copyright &copy; { new Date().getFullYear() }. All rights. Reserved.
+                copyright &copy; { new Date().getFullYear() }. All rights. Reserved.
             </footer>
-
-
       </Container>
       </ThemeProvider>,
     </React.Fragment>
-
 
     </>
   )
