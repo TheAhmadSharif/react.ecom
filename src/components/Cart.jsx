@@ -26,6 +26,14 @@ function Cart() {
 
 
 
+  let grand_total = data_list.cart.reduce  ( 
+    (accumulator, currentValue) => {
+      console.log(currentValue, '_________ Acc', accumulator, '________')
+      return accumulator + currentValue.product.price;
+    })
+
+  console.log(grand_total);
+
   return (
     <>
           <Grid container spacing={4}>
@@ -48,7 +56,8 @@ function Cart() {
                </Grid>
 
                <Grid item xs={12}>
-                  Grand Total = 
+                  Grand Total = {grand_total} Dollar
+            
 
                </Grid>
                   
