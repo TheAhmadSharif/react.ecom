@@ -1,3 +1,10 @@
+–––––––––– 30 June 2024 ––––––––––
+
+To run after clone
+
+npm install && npm run dev
+
+
 –––––––––– 19 April 2024 ––––––––––
 
 –––––––––– React ––––––––––
@@ -52,8 +59,4 @@ python3 -m http.server 80
 
 
 
-–––––––––– 30 June 2024 ––––––––––
 
-To run after clone
-
-npm install && npm run dev
