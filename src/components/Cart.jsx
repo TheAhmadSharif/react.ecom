@@ -70,7 +70,7 @@ function Cart() {
                               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
 
-                              <TableCell align="center">  { index } </TableCell>
+                              <TableCell align="center">  { index + 1 } </TableCell>
                               <TableCell component="th" scope="row">
                                     <img src={obj.product.images[0] }  height="60"/>
                                     {obj.product.title} 

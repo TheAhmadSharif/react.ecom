@@ -1,16 +1,17 @@
-import { useState } from 'react'
+import * as React from 'react';
 import './App.css'
 import './bootstrap.min.css'
 import { Outlet, Link } from "react-router-dom";
-import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import axios from "axios";
 import { styled, ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import AppBar from '@mui/material/AppBar';
+
+import IconButton from '@mui/material/IconButton';
+import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
+
+
 const themeOptions = {
   typography: {
     fontFamily: ['Josefin_Sans', 'sans-serif', 'Domine', 'serif'].join(','),
@@ -62,8 +63,15 @@ function App() {
                       <li><Link  to={`product`}>Product </Link></li>
                       
                     </ul>
-                    <div>
-                         <li className="justify-content-end"><Link  to={`cart`}>Cart { cart.length }</Link></li>
+                    <div className="d-flex justify-content-end w-100">
+                         <li className=""><Link  to={`cart`}>Cart 
+
+                         <StyledBadge badgeContent={4} color="secondary">
+                            <ShoppingCartIcon />
+                          </StyledBadge>
+                                                  
+                         
+                         </Link></li>
                     </div>
                 </div>
               <Outlet />

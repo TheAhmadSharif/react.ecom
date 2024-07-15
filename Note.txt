@@ -5,8 +5,17 @@ Ctl + H
 ^\s*$\n
 
 
+If the sampling frequency is lower than half of the signal frequency, the recording is distorted. This phenomenon is called “aliasing”.
 
 
+Inspiration Website
+
+https://papunet.net/_pelit/papumarket/#/
+
+
+–––––––––– Material Icons 
+https://mui.com/material-ui/material-icons/
+npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
 
 –––––––––– 30 June 2024 ––––––––––
 
