@@ -1,3 +1,13 @@
+–––––––––– 14 July 2024
+Regex to remove line break
+
+Ctl + H
+^\s*$\n
+
+
+
+
+
 –––––––––– 30 June 2024 ––––––––––
 
 To run after clone

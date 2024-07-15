@@ -17,15 +17,17 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
 function Product() {
-  const [count, setCount] = useState(0);
-  const [products, setProducts] = useState({ products: [] });
 
 	const dispatch = useDispatch();
 	let __state = useSelector((state) => {
 		return state;
 	});
-	const { auth, cart, notification } = __state;
+	const { auth, cart, products } = __state;
 	const data_list = __state.products;
+
+
+   console.log(__state, '______ State ______');
+
 
   useEffect(() => {
 			axios.get(`https://dummyjson.com/products?limit=9`)
@@ -74,7 +76,7 @@ function Product() {
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
-                      { obj.title.substring(0, 20)  }
+                      { obj.title.substring(0, 20)  } - {obj.price} Dollar
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                     { obj.description.substring(0, 40) }

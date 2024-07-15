@@ -13,9 +13,9 @@ const cartReducer = (state = [], action) => {
 	
 	switch(action.type) {
 		case INIT_CART:
-			return [action.payload];
+			return [];
 		case EMPTY_CART:
-			return [action.payload];
+			return [];
 		case ADD_CART_ITEM:
 			return [action.payload, ...state];
 		case UPDATE_CART_ITEM_AMOUNT:
