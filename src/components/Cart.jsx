@@ -49,15 +49,15 @@ function Cart() {
           {data_list && data_list.cart.length > 1 ? (
                 <>
                 <Grid item xs= {12} className="d-flex justify-content-center align-items-center">
-                     <h2 className="text-uppercase">Shopping Cart</h2>
+                     <Typography className="text-uppercase" sx={{ my: 4 }}>Shopping Cart</Typography>
                 </Grid>
                   <Grid item xs= {12}>
                   <TableContainer component={Paper}>
                       <Table sx={{ minWidth: 650 }} aria-label="simple table">
                         <TableHead>
                           <TableRow>
-                            <TableCell> Items </TableCell>
-                            <TableCell align="right">#</TableCell>
+                            <TableCell> # </TableCell>
+                            <TableCell align="left"> Items </TableCell>
                             <TableCell align="right">Qty</TableCell>
                             <TableCell align="right">Price </TableCell>
                           </TableRow>
@@ -72,7 +72,7 @@ function Cart() {
 
                               <TableCell align="center">  { index + 1 } </TableCell>
                               <TableCell component="th" scope="row">
-                                    <img src={obj.product.images[0] }  height="60"/>
+                                    <img src={obj.product.images[0] }  height="120"/>
                                     {obj.product.title} 
                                    
                               </TableCell>

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://theahmadsharif.github.io/react.ecom/",
+  "homepage": "https://theahmadsharif.github.io/react.ecom",
   "name": "ecom",
   "private": true,
   "version": "0.0.0",
@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",

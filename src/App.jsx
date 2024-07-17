@@ -2,15 +2,12 @@ import * as React from 'react';
 import './App.css'
 import './bootstrap.min.css'
 import { Outlet, Link } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
-import { styled, ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
+import { useSelector } from 'react-redux';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import IconButton from '@mui/material/IconButton';
-import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
+import { Badge, Container, CssBaseline, Box } from '@mui/material';
 
+import { ShoppingCartCheckout } from '@mui/icons-material';
 
 const themeOptions = {
   typography: {
@@ -35,6 +32,9 @@ const themeOptions = {
 const theme = createTheme(themeOptions);
 function App() {
 
+  let host = window.location.host; 
+  window._server = `http://${host}`;
+
 
   let __state = useSelector((state) => {
     return state;
@@ -50,10 +50,10 @@ function App() {
     <React.Fragment>
     <ThemeProvider theme = { theme }>
       <CssBaseline />
-      <Container maxWidth="md" container="true">
-        <div>
-          <img src="logo.png" alt="" style={{ height : '100px' }}/>
-        </div>
+      <Container sx={{ bgcolor: "white", height: "90vh"}} maxWidth="md" container="true">
+        <Box>
+          <img src="logo.jpg" alt="" style={{ height : '100px' }}/>
+        </Box>
 
 
              <div style={{ minHeight: '80vh'  }}>
@@ -66,9 +66,10 @@ function App() {
                     <div className="d-flex justify-content-end w-100">
                          <li className=""><Link  to={`cart`}>Cart 
 
-                         <StyledBadge badgeContent={4} color="secondary">
-                            <ShoppingCartIcon />
-                          </StyledBadge>
+                         <Badge badgeContent={ cart.length } color="primary">
+                            <ShoppingCartCheckout color="action" />
+                          </Badge>
+
                                                   
                          
                          </Link></li>

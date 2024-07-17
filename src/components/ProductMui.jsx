@@ -9,12 +9,10 @@ import { addCartItem } from '../redux/actionCreators/cartActions.js';
 import axios from "axios";
 
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import { Grid, Typography, Card, CardContent, CardMedia, Button, CardActionArea, CardActions} from '@mui/material';
+import { deepOrange } from '@mui/material/colors';
+
+import { ShoppingCartCheckout } from '@mui/icons-material';
 
 function Product() {
 
@@ -22,15 +20,14 @@ function Product() {
 	let __state = useSelector((state) => {
 		return state;
 	});
-	const { auth, cart, products } = __state;
+	const { products } = __state;
 	const data_list = __state.products;
 
-
-   console.log(__state, '______ State ______');
+   console.log(__state, '______ State ______', '________ Host __________', host, window._server);
 
 
   useEffect(() => {
-			axios.get(`https://dummyjson.com/products?limit=9`)
+			axios.get(`${window._server}/data.json`)
 				.then((response) => {
 					const data = response.data;
 					dispatch(getProducts(data));
@@ -70,7 +67,7 @@ function Product() {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    height="140"
+                    height="240"
                     image={ obj.images[0] }
                     alt={ obj.title }
                   />
@@ -79,24 +76,32 @@ function Product() {
                       { obj.title.substring(0, 20)  } - {obj.price} Dollar
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                    { obj.description.substring(0, 40) }
+                    { obj.title.substring(0, 20) }
                     </Typography>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button size="small" variant="outlined" color="primary"
-                  style={{textTransform: 'none', border: '2px solid' }} onClick={(event)=> addToCart(event, obj)}
+                  <Button 
+                  sx = {{ 
+
+                    "&:hover": { bgcolor: deepOrange[600] }
+
+
+
+                  }}
+                  size="small" 
+                  variant="outlined" 
+                  color="primary"
+
+                  startIcon={<ShoppingCartCheckout />}
+                  style={{textTransform: 'none'}} 
+                  onClick={(event)=> addToCart(event, obj)}
               
                   >
                     Add To Cart
                   </Button>
 
-                  <Button size="small" variant="outlined" color="primary"
-                  style={{textTransform: 'none', border: '2px solid' }} onClick={(event)=> incrementItem(event, obj)}
-              
-                  >
-                    +
-                  </Button>
+                  
                 </CardActions>
             </Card>
                 </Grid>
