@@ -11,7 +11,8 @@ import { ShoppingCartCheckout } from '@mui/icons-material';
 
 const themeOptions = {
   typography: {
-    fontFamily: ['Josefin_Sans', 'sans-serif', 'Domine', 'serif'].join(','),
+    // fontFamily: ['Josefin_Sans', 'sans-serif', 'Domine', 'serif'].join(','),
+    fontFamily: ['sans-serif', 'Domine', 'serif'].join(','),
     button: {
       fontSize: 16,
       fontWeight: 400,
