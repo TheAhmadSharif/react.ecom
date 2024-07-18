@@ -52,7 +52,8 @@ function App() {
       <CssBaseline />
       <Container sx={{ bgcolor: "white", height: "90vh"}} maxWidth="md" container="true">
         <Box>
-          <img src="logo.jpg" alt="" style={{ height : '100px' }}/>
+        <li><Link  to={`/`}><img src="logo.jpg" alt="" style={{ height : '100px' }}/> </Link></li>
+          
         </Box>
 
 
