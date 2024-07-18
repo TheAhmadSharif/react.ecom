@@ -34,7 +34,12 @@ const theme = createTheme(themeOptions);
 function App() {
 
   let host = window.location.host; 
-  window._server = `http://${host}`;
+
+  if (host.includes('localhost')) {
+      window._server = `http://${host}`;
+  } else {
+      window._server = `https://theahmadsharif.github.io/react.ecom`;
+  }
 
 
   let __state = useSelector((state) => {
