@@ -27,7 +27,7 @@ function Product() {
 
 
   useEffect(() => {
-			axios.get(`${window._server}/data.json`)
+			axios.get("https://raw.githubusercontent.com/TheAhmadSharif/react.ecom/main/public/data.json")
 				.then((response) => {
 					const data = response.data;
 					dispatch(getProducts(data));
