@@ -5,3 +5,7 @@ npm run build
 
 ––––––––– Deploy
 https://github.com/ErickKS/vite-deploy
+
+
+https://stackoverflow.com/questions/75637409/default-landing-page-is-not-showing-in-react-js
+https://www.freecodecamp.org/news/deploy-a-react-app-to-github-pages/
