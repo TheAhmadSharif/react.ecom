@@ -1,8 +1,8 @@
 
 import '../App.css'
 
-import { Outlet, Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+
+import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getProducts } from '../redux/actionCreators/productsActions.js';
 import { addCartItem } from '../redux/actionCreators/cartActions.js';
