@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 						<Route index element={<Product />} />
 						<Route path="product" element={<Product />} />
 						<Route path="cart" element={<Cart />} />
-					<Route path="*" element={<>404</>} />
+					<Route path="*" lement={<Product />} />
 				</Route>
 			</Routes>
     	</BrowserRouter>
