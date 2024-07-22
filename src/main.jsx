@@ -12,14 +12,15 @@ import store from './redux/store';
 import {
 	BrowserRouter,
 	Routes,
-	Route
+	Route,
+	HashRouter
   } from "react-router-dom";
 /* ========= Router ========= */
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<Provider store={store}>
-		<BrowserRouter>
+		<HashRouter>
 			<Routes>
 				<Route path="/" element={<App />}>
 					
@@ -29,6 +30,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 					<Route path="*" lement={<Product />} />
 				</Route>
 			</Routes>
-    	</BrowserRouter>
+    	</HashRouter>
 	</Provider>
 );
