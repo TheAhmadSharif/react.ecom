@@ -20,7 +20,6 @@ function Product() {
 	let __state = useSelector((state) => {
 		return state;
 	});
-	const { products } = __state;
 	const data_list = __state.products;
 
    console.log(__state, '______ State ______', '________ Host __________', window._server);

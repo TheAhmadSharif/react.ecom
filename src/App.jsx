@@ -4,9 +4,7 @@ import './bootstrap.min.css'
 import { Outlet, Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-
 import { Badge, Container, CssBaseline, Box } from '@mui/material';
-
 import { ShoppingCartCheckout } from '@mui/icons-material';
 
 const themeOptions = {
@@ -34,12 +32,8 @@ const theme = createTheme(themeOptions);
 function App() {
 
   let host = window.location.host; 
-
-  if (host.includes('localhost')) {
-      window._server = `http://${host}`;
-  } else {
-      window._server = `https://theahmadsharif.github.io/react.ecom`;
-  }
+  window._server = `http://${host}`;
+ 
 
 
   let __state = useSelector((state) => {
