@@ -50,9 +50,9 @@ function App() {
     <React.Fragment>
     <ThemeProvider theme = { theme }>
       <CssBaseline />
-      <Container sx={{ bgcolor: "white", height: "90vh"}} maxWidth="md" container="true">
+      <Container sx={{ bgcolor: "white", height: "auto"}} maxWidth="md" container="true">
         <Box>
-        <li><Link  to={`/`}><img src="logo.jpg" alt="" style={{ height : '100px' }}/> </Link></li>
+        <li><Link  to={`/`}><img src="logo.png" alt="" style={{ height : '100px' }}/> </Link></li>
           
         </Box>
 
@@ -78,6 +78,10 @@ function App() {
                 </div>
               <Outlet />
              </div>
+           
+      </Container>
+
+      <Container maxWidth="md" container="true">
             <footer className="footer_section">
                 copyright &copy; { new Date().getFullYear() }. All rights. Reserved.
             </footer>

@@ -28,6 +28,26 @@ function Cart() {
   let rows = [{
     "calories": 12
   }] 
+
+
+
+
+  const removeItem = (event, obj, qty=1) => {
+    console.log(obj)
+		event.preventDefault();
+		const _obj = {
+			"product": {
+				...obj,
+			},
+			"quantity": qty
+		}
+		dispatch(addCartItem(_obj));
+
+    console.log(__state, '_________ State _________')
+	}
+
+
+
   return (
     <>
           <Grid container spacing={4}>
@@ -49,7 +69,7 @@ function Cart() {
           {data_list && data_list.cart.length > 1 ? (
                 <>
                 <Grid item xs= {12} className="d-flex justify-content-center align-items-center">
-                     <Typography className="text-uppercase" sx={{ my: 4 }}>Shopping Cart</Typography>
+                     <Typography className="text-uppercase font-weight-bold" sx={{ my: 4 }}>Shopping Cart</Typography>
                 </Grid>
                   <Grid item xs= {12}>
                   <TableContainer component={Paper}>
@@ -60,6 +80,7 @@ function Cart() {
                             <TableCell align="left"> Items </TableCell>
                             <TableCell align="right">Qty</TableCell>
                             <TableCell align="right">Price </TableCell>
+                            <TableCell align="right">Remove </TableCell>
                           </TableRow>
                         </TableHead>
                         <TableBody>
@@ -78,6 +99,7 @@ function Cart() {
                               </TableCell>
                               <TableCell align="right">  1 </TableCell>
                               <TableCell align="right">  {obj.product.price} </TableCell>
+                              <TableCell align="right">   onClick={(event)=> removeItem(event, obj)} Remove</TableCell>
                             </TableRow>
                           ))}
                         </TableBody>

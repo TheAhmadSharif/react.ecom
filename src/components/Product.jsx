@@ -91,10 +91,10 @@ function Product() {
                   size="small" 
                   variant="outlined" 
                   color="primary"
-
+addToCart
                   startIcon={<ShoppingCartCheckout />}
                   style={{textTransform: 'none'}} 
-                  onClick={(event)=> addToCart(event, obj)}
+                  onClick={(event)=> (event, obj)}
               
                   >
                     Add To Cart
