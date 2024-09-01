@@ -9,8 +9,7 @@ import { ShoppingCartCheckout } from '@mui/icons-material';
 
 const themeOptions = {
   typography: {
-    // fontFamily: ['Josefin_Sans', 'sans-serif', 'Domine', 'serif'].join(','),
-    fontFamily: ['sans-serif', 'Domine', 'serif'].join(','),
+    fontFamily: ['Josefin_Sans', 'sans-serif', 'Domine', 'serif'].join(','),
     button: {
       fontSize: 16,
       fontWeight: 400,
@@ -18,7 +17,7 @@ const themeOptions = {
   },
   palette: {
     background: {
-        default: "#F3F3F3"
+        default: "#dbdbdb"
       },
     primary: {
       main: '#ff7043',
@@ -50,7 +49,7 @@ function App() {
     <React.Fragment>
     <ThemeProvider theme = { theme }>
       <CssBaseline />
-      <Container sx={{ bgcolor: "white", height: "auto"}} maxWidth="md" container="true">
+      <Container sx={{ bgcolor: "white", height: "auto", paddingBottom: "24px"}} maxWidth="md" container="true">
         <Box>
         <li><Link  to={`/`}><img src="logo.png" alt="" style={{ height : '100px' }}/> </Link></li>
           
@@ -78,14 +77,19 @@ function App() {
                 </div>
               <Outlet />
              </div>
+
+             <div className="mt-2 mb-2">
+               <hr className=""/>
+             </div>
+             <footer className="footer_section">
+                copyright &copy; { new Date().getFullYear() }. All rights. Reserved.
+            </footer>
+
+            
            
       </Container>
 
-      <Container maxWidth="md" container="true">
-            <footer className="footer_section">
-                copyright &copy; { new Date().getFullYear() }. All rights. Reserved.
-            </footer>
-      </Container>
+     
       </ThemeProvider>,
     </React.Fragment>
     </>

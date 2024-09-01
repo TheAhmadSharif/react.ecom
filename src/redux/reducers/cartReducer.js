@@ -29,7 +29,9 @@ const cartReducer = (state = [], action) => {
 			} 
 			return state;
 		case REMOVE_CART_ITEM:
+			console.log('remove', state)
 			return state.filter(obj => (
+				
 				obj.id !== action.payload.id
 			));
 		default:

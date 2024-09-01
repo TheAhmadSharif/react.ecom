@@ -1,8 +1,5 @@
 import '../App.css'
-import { useSelector } from 'react-redux';
 import Grid from '@mui/material/Grid';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import * as React from 'react';
@@ -13,12 +10,25 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { removeCartItem } from '../redux/actionCreators/cartActions.js';
+import { useSelector, useDispatch } from 'react-redux';
+
+
+import CancelIcon from '@mui/icons-material/Cancel';
 function Cart() {
+
+  const dispatch = useDispatch();
   let __state = useSelector((state) => {
     return state;
   });
   const data_list = __state;
   console.log(data_list.cart, 'cart')
+
+
+
+  
+
+
   let grand_total = data_list && (data_list.cart.length > 0) && data_list.cart.reduce  ( 
     (accumulator, currentValue) => {
       console.log(parseFloat(currentValue.product.price), '_________ Acc ', currentValue.product.price, '________', '\n')
@@ -35,13 +45,8 @@ function Cart() {
   const removeItem = (event, obj, qty=1) => {
     console.log(obj)
 		event.preventDefault();
-		const _obj = {
-			"product": {
-				...obj,
-			},
-			"quantity": qty
-		}
-		dispatch(addCartItem(_obj));
+	
+		dispatch(removeCartItem(obj));
 
     console.log(__state, '_________ State _________')
 	}
@@ -57,7 +62,7 @@ function Cart() {
                 <div>
                   <h2 className="text-center">You don't have any items in your cart. Let's get shopping!</h2>
                   <div className="text-center">
-                    <Button className="btn btn-success" href="/shopping-page">
+                    <Button className="btn btn-success fw-bold" href="/shopping-page">
                       Go To Shopping Page
                     </Button>
                   </div>
@@ -69,7 +74,7 @@ function Cart() {
           {data_list && data_list.cart.length > 1 ? (
                 <>
                 <Grid item xs= {12} className="d-flex justify-content-center align-items-center">
-                     <Typography className="text-uppercase font-weight-bold" sx={{ my: 4 }}>Shopping Cart</Typography>
+                     <Typography className="text-uppercase fw-bold" sx={{ my: 4 }}>Shopping Cart</Typography>
                 </Grid>
                   <Grid item xs= {12}>
                   <TableContainer component={Paper}>
@@ -99,7 +104,16 @@ function Cart() {
                               </TableCell>
                               <TableCell align="right">  1 </TableCell>
                               <TableCell align="right">  {obj.product.price} </TableCell>
-                              <TableCell align="right">   onClick={(event)=> removeItem(event, obj)} Remove</TableCell>
+                              <TableCell align="right">   
+                                
+                              <Button variant="none" color="primary" onClick={(event) => removeItem(event, obj)}>
+
+                              <CancelIcon />
+                               
+                              </Button>
+                                
+                                
+                                </TableCell>
                             </TableRow>
                           ))}
                         </TableBody>

@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
     font-family: Domine;
     src: url("assets/webfonts/Domine-Regular.ttf")  format('truetype');
 }
@@ -18,7 +18,7 @@
   src: url('assets/webfonts/JosefinSans-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-} */
+} 
 .nav_menu {
   width: 100%;
   margin-bottom: 3rem;
@@ -34,7 +34,11 @@
 }
 
 .footer_section {
-  margin-top: 3rem;
   background: #FFF;
-  padding: 1rem 2rem;
+  padding: 1rem .5rem;
+}
+
+
+.fw-bold {
+  font-family: 'Josefin_Sans_Bold' !important;
 }

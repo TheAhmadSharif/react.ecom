@@ -1,6 +1,5 @@
 :root {
-  /* font-family: Jersey_25, Helvetica, Arial, sans-serif; */
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Jersey_25', Helvetica, Arial, sans-serif; 
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -8,14 +7,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-
-body {
-  /* font-family: Jersey_25; */
-  margin: 0;
-  display: flex;
-  background: #DDD;
 }
 
 

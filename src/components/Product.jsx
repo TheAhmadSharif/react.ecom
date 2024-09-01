@@ -36,7 +36,7 @@ function Product() {
 			});
 	}, [])
 
-  const addToCart = (event, obj, qty=1) => {
+  const addtocart = (event, obj, qty=1) => {
     console.log(obj)
 		event.preventDefault();
 		const _obj = {
@@ -91,10 +91,10 @@ function Product() {
                   size="small" 
                   variant="outlined" 
                   color="primary"
-addToCart
+    
                   startIcon={<ShoppingCartCheckout />}
                   style={{textTransform: 'none'}} 
-                  onClick={(event)=> (event, obj)}
+                  onClick={(event)=> addtocart(event, obj)}
               
                   >
                     Add To Cart
