@@ -29,11 +29,11 @@ const cartReducer = (state = [], action) => {
 			} 
 			return state;
 		case REMOVE_CART_ITEM:
-			console.log('remove', state)
-			return state.filter(obj => (
-				
-				obj.id !== action.payload.id
-			));
+			
+			return state.filter(obj => {
+				console.log(obj.product.id, '___ ID __', action.payload, '__ action.payload __')
+				return obj.product.id == action.payload;  
+			});
 		default:
 			return state;
 	}

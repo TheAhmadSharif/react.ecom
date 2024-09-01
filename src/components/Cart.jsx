@@ -42,11 +42,13 @@ function Cart() {
 
 
 
-  const removeItem = (event, obj, qty=1) => {
-    console.log(obj)
+  const removeItem = (event, obj) => {
+    const id = obj.product.id
+
+    console.log(obj, '___ Obj ___', '__removeItem__')
 		event.preventDefault();
 	
-		dispatch(removeCartItem(obj));
+		dispatch(removeCartItem(id));
 
     console.log(__state, '_________ State _________')
 	}
@@ -106,7 +108,7 @@ function Cart() {
                               <TableCell align="right">  {obj.product.price} </TableCell>
                               <TableCell align="right">   
                                 
-                              <Button variant="none" color="primary" onClick={(event) => removeItem(event, obj)}>
+                              <Button variant="none" color="primary" onClick={(event) => removeItem(event, obj )}>
 
                               <CancelIcon />
                                
