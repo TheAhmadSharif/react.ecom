@@ -10,7 +10,7 @@ import axios from "axios";
 
 
 import { Grid, Typography, Card, CardContent, CardMedia, Button, CardActionArea, CardActions} from '@mui/material';
-import { deepOrange } from '@mui/material/colors';
+import { deepOrange, green, grey } from '@mui/material/colors';
 
 import { ShoppingCartCheckout } from '@mui/icons-material';
 
@@ -82,11 +82,8 @@ function Product() {
                 <CardActions>
                   <Button 
                   sx = {{ 
-
-                    "&:hover": { bgcolor: deepOrange[600] }
-
-
-
+                    "bgcolor": 'grey',
+                    "&:hover": { bgcolor: grey[600] }
                   }}
                   size="small" 
                   variant="outlined" 

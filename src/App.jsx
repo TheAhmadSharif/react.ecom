@@ -7,6 +7,12 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Badge, Container, CssBaseline, Box } from '@mui/material';
 import { ShoppingCartCheckout } from '@mui/icons-material';
 
+const primary = {
+  main: '#1976d2',
+  light: '#42a5f5',
+  dark: '#1565c0',
+  contrastText: '#fff',
+};
 const themeOptions = {
   typography: {
     fontFamily: ['Josefin_Sans', 'sans-serif', 'Domine', 'serif'].join(','),
@@ -20,10 +26,10 @@ const themeOptions = {
         default: "#dbdbdb"
       },
     primary: {
-      main: '#ff7043',
+      main: primary.dark,
     },
     secondary: {
-      main: '#f4ff81',
+      main: '#333',
     },
   },
 };
@@ -39,9 +45,7 @@ function App() {
     return state;
   });
   const data_list = __state;
-
   const { cart } = data_list;
-  console.log(cart, 'cart')
 
 
   return (

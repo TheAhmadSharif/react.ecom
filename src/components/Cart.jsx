@@ -67,7 +67,7 @@ function Cart() {
             )}
           </>
           <>
-          {data_list && data_list.cart.length > 1 ? (
+          {data_list && data_list.cart.length > 0 ? (
                 <>
                 <Grid item xs= {12} className="d-flex justify-content-center align-items-center">
                      <Typography className="text-uppercase fw-bold" sx={{ my: 4 }}>Shopping Cart</Typography>
@@ -88,7 +88,7 @@ function Cart() {
                           {
                           data_list && data_list.cart && data_list.cart.map((obj, index) => (
                             <TableRow
-                              key={index}
+                              key={obj.product.id}
                               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
 
