@@ -17,6 +17,7 @@ const cartReducer = (state = [], action) => {
 		case EMPTY_CART:
 			return [];
 		case ADD_CART_ITEM:
+			console.log(state, '20', action.payload, 'payload')
 			return [action.payload, ...state];
 		case UPDATE_CART_ITEM_AMOUNT:
 			const { id, price, description, image } = action.payload;
@@ -29,11 +30,9 @@ const cartReducer = (state = [], action) => {
 			} 
 			return state;
 		case REMOVE_CART_ITEM:
+			console.log(state, 'action', action )
+			return state;
 			
-			return state.filter(obj => {
-				console.log(obj.product.id, '___ ID __', action.payload, '__ action.payload __')
-				return obj.product.id == action.payload;  
-			});
 		default:
 			return state;
 	}

@@ -31,26 +31,20 @@ function Cart() {
 
   let grand_total = data_list && (data_list.cart.length > 0) && data_list.cart.reduce  ( 
     (accumulator, currentValue) => {
-      console.log(parseFloat(currentValue.product.price), '_________ Acc ', currentValue.product.price, '________', '\n')
       return parseFloat(currentValue.product.price) + accumulator;
     }, 0)
-  console.log(grand_total);
-  let rows = [{
-    "calories": 12
-  }] 
-
-
 
 
   const removeItem = (event, obj) => {
     const id = obj.product.id
 
-    console.log(obj, '___ Obj ___', '__removeItem__')
+    console.log(id, '___ id ___', '__removeItem__')
 		event.preventDefault();
 	
 		dispatch(removeCartItem(id));
 
-    console.log(__state, '_________ State _________')
+    console.log(__state, '___46')
+
 	}
 
 
@@ -101,7 +95,7 @@ function Cart() {
                               <TableCell align="center">  { index + 1 } </TableCell>
                               <TableCell component="th" scope="row">
                                     <img src={obj.product.images[0] }  height="120"/>
-                                    {obj.product.title} 
+                                    ID: {obj.product.id} &nbsp;  {obj.product.title} 
                                    
                               </TableCell>
                               <TableCell align="right">  1 </TableCell>

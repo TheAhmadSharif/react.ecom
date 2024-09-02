@@ -24,11 +24,11 @@ export const addCartItem = (product) => {
 	};
 };
 
-export const removeCartItem = (product) => {
+export const removeCartItem = (id) => {
 	return (dispatch) => {
 		dispatch({
 			type: REMOVE_CART_ITEM,
-            payload: product
+            payload: id
 		});
 	};
 };

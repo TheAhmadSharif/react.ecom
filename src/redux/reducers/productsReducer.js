@@ -24,6 +24,7 @@ const productsReducer = (state = [], action) => {
 		case GET_PRODUCT:
 			return [action.payload];
 		case GET_PRODUCTS:
+			console.log(state, '_________27', action)
 			return action.payload;
 		case ADD_PRODUCT:
 			return [action.payload, ...state];
