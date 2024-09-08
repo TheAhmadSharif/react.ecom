@@ -1,8 +1,8 @@
 import '../App.css'
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-import * as React from 'react';
+import {  Box } from '@mui/material';
+import { Button} from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -47,6 +47,16 @@ function Cart() {
 
 	}
 
+  const decreaseQuantity = () => {
+   
+
+	}
+
+  const increaseQuantity = () => {
+   
+
+	}
+
 
 
   return (
@@ -55,14 +65,20 @@ function Cart() {
           <>
             {data_list.cart.length === 0 && (
               <Grid item xs={12} className="d-flex justify-content-center align-items-center mh empty-cart">
-                <div>
+                <Box
+
+                  sx =  {{ marginTop: '30px' }}
+                
+                >
                   <h2 className="text-center">You don't have any items in your cart. Let's get shopping!</h2>
                   <div className="text-center">
-                    <Button className="btn btn-success fw-bold" href="/shopping-page">
+                    <Button 
+                    sx = {{ marginTop: '30px' }}
+                    variant="outlined" className="fw-bold" href="/shopping-page">
                       Go To Shopping Page
                     </Button>
                   </div>
-                </div>
+                </Box>
               </Grid>
             )}
           </>
@@ -98,7 +114,21 @@ function Cart() {
                                     ID: {obj.product.id} &nbsp;  {obj.product.title} 
                                    
                               </TableCell>
-                              <TableCell align="right">  1 </TableCell>
+                              <TableCell align="right">  
+
+                              <div className="quantity-selector">
+                                <button className="minus-btn" onClick={decreaseQuantity}>
+                                  -
+                                </button>
+                                <input type="text" value="1" readOnly />
+                                <button className="plus-btn" onClick={increaseQuantity}>
+                                  +
+                                </button>
+                              </div>
+
+
+
+                              </TableCell>
                               <TableCell align="right">  {obj.product.price} </TableCell>
                               <TableCell align="right">   
                                 
