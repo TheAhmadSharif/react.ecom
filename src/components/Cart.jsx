@@ -149,7 +149,9 @@ function Cart() {
                  
                       <Grid item xs={12}>
                           <div className="d-flex justify-content-end">
-                              Grand Total = {(Math.round(grand_total * 100) / 100).toFixed(2)} Dollar
+                              Grand Total = &nbsp; <span className="fw-bold f-20">
+                              {(Math.round(grand_total * 100) / 100).toFixed(2)}
+                              </span> &nbsp;  Dollar
                           </div>
                       </Grid>
                 </>

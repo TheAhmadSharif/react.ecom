@@ -65,6 +65,7 @@ function App() {
                     <ul className="list d-flex" id="mainMenu">
                       <li><Link  to={`/`}>Home </Link></li>
                       <li><Link  to={`product`}>Product </Link></li>
+                      <li><Link  to={`about`}>About </Link></li>
                       
                     </ul>
                     <div className="d-flex justify-content-end w-100">

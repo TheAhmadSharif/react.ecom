@@ -83,3 +83,12 @@
   outline: none;
   pointer-events: none; /* Make the input uneditable */
 }
+
+
+.f-16 {
+  font-size: 16px !important;
+}
+
+.f-20 {
+  font-size: 20px !important;
+}

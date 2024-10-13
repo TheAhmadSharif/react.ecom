@@ -58,50 +58,19 @@ function Product() {
     <>
     <div>
     <Grid container spacing={4}>
+   
 
-         {
-           data_list && data_list.products && data_list.products.map((obj) =>
-             <Grid item xs={4} key={ obj.id }>
-           <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="240"
-                    image={ obj.images[0] }
-                    alt={ obj.title }
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h6" component="div">
-                      { obj.title.substring(0, 20)  } - {obj.price} Dollar
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                    { obj.title.substring(0, 20) }
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <Button 
-                  sx = {{ 
-                    "bgcolor": 'deepPurple',
-                    "&:hover": { bgcolor: grey[600] }
-                  }}
-                  size="small" 
-                  variant="contained" 
-                  color="primary"
-    
-                  startIcon={<ShoppingCartCheckout />}
-                  style={{textTransform: 'none'}} 
-                  onClick={(event)=> addtocart(event, obj)}
-              
-                  >
-                    Add To Cart
-                  </Button>
+        <Grid item xs={12} className="d-flex justify-content-center align-items-center mh">
 
-                  
-                </CardActions>
-            </Card>
-                </Grid>
-         )}
+                  <ul class="list-group">
+                    <li class="list-group-item">React App</li>
+                    <li class="list-group-item">Ahmad Sharif</li>
+                  </ul>
+          
+        </Grid>
+
+
+       
 
       </Grid>
     </div>

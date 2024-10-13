@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Cart from './components/Cart.jsx'
 import Product from './components/Product.jsx'
+import About from './components/About.jsx'
 import './index.css'
 import './custom.css';
 
@@ -26,6 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 					
 						<Route index element={<Product />} />
 						<Route path="product" element={<Product />} />
+						<Route path="about" element={<About />} />
 						<Route path="cart" element={<Cart />} />
 					<Route path="*" lement={<Product />} />
 				</Route>
